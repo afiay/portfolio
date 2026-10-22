@@ -22,3 +22,5 @@ Open `index.html` in a browser. This is a complete offline-capable static websit
 ## Privacy
 
 The Edugrade diploma is a public-facing redacted copy. Do not replace it with an unredacted original before publishing. Review all files before deployment.
+
+
