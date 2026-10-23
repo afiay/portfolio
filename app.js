@@ -3,19 +3,20 @@
 
   const menuToggle = document.querySelector(".menu-toggle");
   const navigation = document.getElementById("primary-nav");
-  const mobileBreakpoint = window.matchMedia("(max-width: 720px)");
+  const mobileBreakpoint = window.matchMedia("(max-width: 820px)");
 
-  function setMenuOpen(isOpen) {
+  function setMenuOpen(isOpen, focusFirstLink = false) {
     if (!menuToggle || !navigation) return;
     const shouldOpen = Boolean(isOpen && mobileBreakpoint.matches);
     menuToggle.setAttribute("aria-expanded", String(shouldOpen));
     menuToggle.setAttribute("aria-label", shouldOpen ? "Close navigation menu" : "Open navigation menu");
     navigation.classList.toggle("is-open", shouldOpen);
     document.body.classList.toggle("menu-open", shouldOpen);
+    if (shouldOpen && focusFirstLink) navigation.querySelectorAll("a")[0]?.focus();
   }
 
   menuToggle?.addEventListener("click", () => {
-    setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+    setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true", true);
   });
 
   navigation?.querySelectorAll("a").forEach((link) => {
@@ -23,9 +24,26 @@
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") {
+    if (menuToggle?.getAttribute("aria-expanded") !== "true") return;
+    if (event.key === "Escape") {
       setMenuOpen(false);
       menuToggle.focus();
+    }
+    if (event.key === "Tab" && navigation) {
+      const focusTargets = [menuToggle, ...navigation.querySelectorAll("a")];
+      const position = focusTargets.indexOf(document.activeElement);
+      const next = event.shiftKey ? position - 1 : position + 1;
+      if (position === -1 || next < 0 || next >= focusTargets.length) {
+        event.preventDefault();
+        focusTargets[position === -1 ? 1 : (next < 0 ? focusTargets.length - 1 : 0)].focus();
+      }
+    }
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (menuToggle?.getAttribute("aria-expanded") === "true" &&
+        !menuToggle.contains(event.target) && !navigation?.contains(event.target)) {
+      setMenuOpen(false);
     }
   });
 
@@ -33,20 +51,49 @@
 
   const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
   const projectCards = Array.from(document.querySelectorAll("[data-category]"));
+  const projectGrid = document.getElementById("project-grid");
+  const labView = document.getElementById("labs");
+
+  function selectProjectView(selected) {
+    filterButtons.forEach((item) => {
+      const active = item.dataset.filter === selected;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    const showingLabs = selected === "labs";
+    if (projectGrid) projectGrid.hidden = showingLabs;
+    if (labView) labView.hidden = !showingLabs;
+    projectCards.forEach((card) => {
+      const categories = (card.dataset.category || "").split(/\s+/);
+      card.hidden = showingLabs || (selected !== "all" && !categories.includes(selected));
+    });
+    if (typeof document.dispatchEvent === "function") {
+      document.dispatchEvent(new Event("portfolio:labs-view-change"));
+    }
+  }
 
   filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const selected = button.dataset.filter;
-      filterButtons.forEach((item) => {
-        const active = item === button;
-        item.classList.toggle("is-active", active);
-        item.setAttribute("aria-pressed", String(active));
-      });
-      projectCards.forEach((card) => {
-        const categories = (card.dataset.category || "").split(/\s+/);
-        card.hidden = selected !== "all" && !categories.includes(selected);
-      });
-    });
+    button.addEventListener("click", () => selectProjectView(button.dataset.filter));
+  });
+
+  // The original #labs navigation and copied ?lab=...#labs URLs must reveal
+  // the now-embedded explorer before the browser scrolls to its anchor.
+  document.querySelectorAll('a[href="#labs"]').forEach((link) => {
+    link.addEventListener("click", () => selectProjectView("labs"));
+  });
+  document.querySelectorAll('a[href="#projects"]').forEach((link) => {
+    link.addEventListener("click", () => selectProjectView("all"));
+  });
+  if (window.location?.hash === "#labs" || /(?:^|[?&])lab=lab-0[123](?:&|$)/.test(window.location?.search || "")) {
+    selectProjectView("labs");
+    if (window.location?.hash === "#labs") {
+      // Some browsers try their initial anchor scroll before a hidden view opens.
+      window.requestAnimationFrame?.(() => labView?.scrollIntoView?.({ block: "start" }));
+    }
+  }
+  window.addEventListener?.("hashchange", () => {
+    if (window.location?.hash === "#labs") selectProjectView("labs");
+    if (window.location?.hash === "#projects") selectProjectView("all");
   });
 
   const copyEmailButton = document.querySelector("[data-copy-email]");

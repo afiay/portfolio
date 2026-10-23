@@ -4,14 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
-    <meta name="description" content="Ayoub Afi's network engineering portfolio: infrastructure, routing and switching, security, automation, and documented technical projects." />
+    <meta name="description" content="I'm Ayoub Afi. From the cable to your screen, I follow my curiosity through networks, security, automation and code, with documented labs and independently built tools." />
     <meta property="og:title" content="Ayoub Afi | Network Engineering, Security and Automation" />
-    <meta property="og:description" content="Engineering reliable networks. Automating what matters." />
+    <meta property="og:description" content="A curious, self-taught builder who walked many roads and chose IT. Explore the networks, security tools and real learning behind the work." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://afiay.github.io/portfolio/assets/ayoub-afi-profile.png" />
+    <meta name="author" content="Ayoub Afi" />
     <title>Ayoub Afi | Network Engineer</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./app.js" defer></script>
+    <script src="./lab-data.js" defer></script>
+    <script src="./labs.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -29,24 +33,27 @@
           <a href="#about">About</a>
           <a href="#expertise">Expertise</a>
           <a href="#projects">Projects</a>
+          <a href="#labs">Labs</a>
           <a href="#process">My Process</a>
           <a href="#contact">Contact</a>
-          <a href="#contact" class="nav-cta">Let's connect</a>
+          <a href="#contact" class="nav-cta">Let's connect <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </header>
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy">
-            <div class="eyebrow">NETWORK ENGINEERING <span>/</span> SECURITY <span>/</span> AUTOMATION</div>
-            <h1 id="hero-title">Engineering <em>reliable networks.</em> Automating what matters.</h1>
-            <p class="hero-description">I connect infrastructure, security and software through structured troubleshooting, thoughtful design and practical automation.</p>
+            <div class="eyebrow"><span class="eyebrow-line"></span>NETWORK ENGINEERING <span>/</span> CYBERSECURITY <span>/</span> AUTOMATION</div>
+            
+            <div class="hero-introduction"><img src="./assets/ayoub-afi-profile.png" width="64" height="64" alt="Portrait of Ayoub Afi" /><span>Hi, I'm Ayoub. <small>A curious builder who likes getting to the bottom of things.</small></span></div>
+            <h1 id="hero-title">From the Cable <em>to Your Screen.</em></h1>
+            <p class="hero-description">Just because a connection is up doesn’t mean everything is working. I’ve always been curious about what happens behind the scenes, from the physical cable through the network to the security and applications people rely on. When something goes wrong, I want to understand why, not just find a quick fix. And when everything works, I still wonder if it could work better. That’s what drives me: curiosity to dig deeper, creativity to see new possibilities, and the determination to turn ideas into real solutions. For me, understanding how things work is only the beginning. <strong>The exciting part is finding ways to make them better.</strong></p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#projects">Explore my work</a>
-              <a class="button button-outline" href="#about">About me</a>
+              <a class="button button-primary" href="#about">My story <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" href="#labs">Explore my network labs</a>
             </div>
             <div class="hero-location">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>
@@ -54,31 +61,56 @@
             </div>
           </div>
           <div class="hero-visual">
-            <div class="topology-head"><span>ENTERPRISE NETWORK</span><span>REFERENCE TOPOLOGY</span></div>
             <picture class="topology-art">
-              <source media="(max-width: 720px)" srcset="./assets/network-topology-mobile.svg" type="image/svg+xml" />
+              <source media="(max-width: 820px)" srcset="./assets/network-topology-mobile.svg" type="image/svg+xml" />
               <img src="./assets/network-topology.svg" alt="Conceptual enterprise network: two internet providers, high-availability firewalls, redundant OSPF core routers and distribution switches, an EIGRP branch, Wi-Fi laptops, dual-homed data center and wired VLANs." width="1000" height="680" />
             </picture>
-            <div class="topology-footer"><span>Resilience</span><span>Segmentation</span><span>Routing</span><span>Wireless</span></div>
+            <a class="visual-caption" href="#labs"><span class="live-dot" aria-hidden="true"></span> CONCEPTUAL NETWORK <span>/</span> VIEW VERIFIED LABS <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
 
       <div class="capability-bar" aria-label="Professional focus areas">
         <div class="container capability-inner">
-          <div><span class="capability-index">01 / THINK</span><strong>End-to-end troubleshooting</strong></div>
-          <div><span class="capability-index">02 / DESIGN</span><strong>Resilient infrastructure</strong></div>
-          <div><span class="capability-index">03 / AUTOMATE</span><strong>Repeatable operations</strong></div>
-          <div><span class="capability-index">04 / IMPROVE</span><strong>Shared documentation</strong></div>
+          <div><span class="capability-index">01 / LISTEN</span><strong>Understand the real problem</strong></div>
+          <div><span class="capability-index">02 / TRACE</span><strong>Follow it from layer 1</strong></div>
+          <div><span class="capability-index">03 / PROVE</span><strong>Test the result, not a guess</strong></div>
+          <div><span class="capability-index">04 / SHARE</span><strong>Leave useful notes behind</strong></div>
         </div>
       </div>
 
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <div class="about-intro">
+            <div class="eyebrow"><span class="eyebrow-line"></span>ABOUT ME</div>
+            <h2 id="about-title">My path into IT <em>wasn't a straight line.</em></h2>
+            <p>And I wouldn't change that. Working with people gave me a reason to build things; learning technology gave me the tools.</p>
+            <ol class="story-trail" aria-label="Three chapters in my journey">
+              <li class="story-trail-item"><span class="story-trail-index">01</span><div><strong>Many roads, many people</strong><small>Factory floors, public institutions, travel, sales and community projects.</small></div></li>
+              <li class="story-trail-item"><span class="story-trail-index">02</span><div><strong>Learning by doing</strong><small>Asking questions, teaching myself to build and following problems to their source.</small></div></li>
+              <li class="story-trail-item"><span class="story-trail-index">03</span><div><strong>Choosing IT</strong><small>Networks, security, automation and code. A field I genuinely want to understand.</small></div></li>
+            </ol>
+          </div>
+          <div class="about-story">
+            <p class="about-question-label"><strong>The Question</strong></p>
+            <p class="about-argument">If you had two candidates in front of you, one who spent a career in a single field and another who worked in factories, tourism, ministries, politics, NGOs, sales, marketing, and social entrepreneurship, who would you hire?</p>
+            <p>I know it's a hard choice. But I'm the second candidate, and here's what that journey taught me.</p>
+            <p>I've seen how a factory floor breathes, how a traveler decides to trust a stranger, how decisions move through a ministry, how a campaign changes minds, how a sale can be won or lost in one sentence, and how a small idea can become something meaningful with limited resources.</p>
+            <p class="about-signature"><strong>I learned to read people before I learned to read code.</strong></p>
+            <p>Every one of those places depends on technology, and when something stops working, someone is waiting. A factory manager whose production line has stopped. A tour operator whose booking system goes down in peak season. A ministry that can't afford to lose a single file. A campaign team facing a deadline without a connection.</p>
+            <p>I've experienced those environments from the inside. So when someone tells me something is urgent, I understand what's at stake behind it.</p>
+            <p>That's why I start by listening, then investigate across the technical layers, from the physical connection to the application, and verify the solution rather than guess. My network labs, my Carthago security monitor, and my internship at IoT Open are where I put that approach into practice.</p>
+            <p>Along the way, I found where I belong. IT is what makes me look forward to each new day. It's the work I'd choose even if no one asked me to.</p>
+            <p class="about-question-ending"><strong>So the real question is: do you want someone who knows one road well, or someone who has walked many and deliberately chosen yours?</strong></p>
+          </div>
+        </div>
+      </section>
+
       <section class="section expertise-section" id="expertise" aria-labelledby="expertise-title">
         <div class="container">
-          <div class="eyebrow">WHAT I BRING</div>
+          <div class="eyebrow"><span class="eyebrow-line"></span>WHAT I BRING</div>
           <div class="section-heading-line">
-            <h2 id="expertise-title">From infrastructure to intelligent operations</h2>
-            <p>End-to-end thinking, from the physical network to the services people rely on.</p>
+            <h2 id="expertise-title">I like seeing how the whole system fits together.</h2>
           </div>
           <div class="expertise-grid">
             <article class="expertise-card">
@@ -119,80 +151,106 @@
         <div class="container">
           <div class="section-topline">
             <div>
-              <div class="eyebrow">SELECTED WORK</div>
-              <h2 id="projects-title">Projects with a purpose</h2>
+              <div class="eyebrow"><span class="eyebrow-line"></span>SELECTED WORK</div>
+              <h2 id="projects-title">Things I've built, tested <em>and learned from.</em></h2>
             </div>
-            <p>Practical labs, applied product work and governed engineering concepts. The context of each project is stated clearly.</p>
           </div>
           <div class="project-filters" role="group" aria-label="Filter projects">
             <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All projects</button>
-            <button type="button" class="filter-btn" data-filter="network" aria-pressed="false">Networks</button>
-            <button type="button" class="filter-btn" data-filter="security" aria-pressed="false">Security</button>
+            <button type="button" class="filter-btn" data-filter="labs" aria-pressed="false" aria-controls="labs">Network Labs</button>
             <button type="button" class="filter-btn" data-filter="software" aria-pressed="false">Software</button>
             <button type="button" class="filter-btn" data-filter="automation" aria-pressed="false">Automation</button>
           </div>
           <div class="project-grid" id="project-grid">
-            <article class="project-card project-feature" data-category="network">
-              <div class="project-art project-art-network art-surface" aria-hidden="true">
-  <div class="art-toolbar"><span>NETWORK LAB</span><span>TOPOLOGY / DESIGN</span></div>
-  <div class="net-map">
-    <div class="net-node net-internet">WAN <small>Dual uplink</small></div>
-    <div class="net-lines net-lines-a"></div>
-    <div class="net-row"><div class="net-node">FIREWALL A<small>Policy</small></div><div class="net-node">FIREWALL B<small>Failover</small></div></div>
-    <div class="net-lines net-lines-b"></div>
-    <div class="net-row"><div class="net-node net-core">CORE A<small>OSPF</small></div><div class="net-node net-core">CORE B<small>OSPF</small></div></div>
-    <div class="net-lines net-lines-c"></div>
-    <div class="net-row net-access"><div class="net-node">VLAN 10<small>Users</small></div><div class="net-node">VLAN 20<small>Servers</small></div><div class="net-node">Wi-Fi<small>Clients</small></div></div>
-  </div>
-  <div class="art-bottom">REDUNDANCY <span>SEGMENTATION</span> ROUTING</div>
-</div>
-              <div class="project-body">
-                <div class="project-meta">NETWORK ENGINEERING <span>01</span></div>
-                <h3>Enterprise Network Labs</h3>
-                <p>Building and diagnosing segmented network scenarios in a lab, from topology and addressing to routing, switching, VLAN design and fault isolation.</p>
-                <div class="tag-row"><span>Cisco</span><span>VLAN</span><span>Routing</span></div>
-                <div class="project-facts">
-                  <div><span>CONTRIBUTION</span><p>Designed topologies, configured segmentation and routing, then traced faults through interfaces, trunks, addressing and policies.</p></div>
-                  <div><span>CONTEXT</span><p>Hands-on education and network labs. Findings are documented and verified with repeatable connectivity checks.</p></div>
-                </div>
-              </div>
-            </article>
             <article class="project-card project-feature project-feature-security" data-category="network security software">
-              <div class="project-art project-art-security art-surface" aria-hidden="true">
-  <div class="art-toolbar"><span>CARTHAGO</span><span>NETWORK SECURITY MONITOR</span></div>
-  <div class="security-screen">
-    <div class="security-top"><div><small>VISIBILITY</small><strong>Network health</strong></div><span class="screen-status">MONITORING</span></div>
-    <div class="security-stats"><div><small>TRAFFIC</small><span>Flow analysis</span></div><div><small>DETECTION</small><span>Event signals</span></div><div><small>RESPONSE</small><span>Investigation</span></div></div>
-    <div class="security-chart"><div class="chart-heading"><span>NETWORK TELEMETRY</span><span>Illustrative view</span></div><svg viewBox="0 0 460 106" preserveAspectRatio="none"><path d="M0 85H460M0 54H460M0 24H460" stroke="#31576A" stroke-dasharray="4 7" fill="none"/><path d="M0 81L22 78 42 73 65 77 86 51 108 63 132 57 153 70 178 39 200 55 222 47 245 65 270 44 294 49 317 28 342 45 364 36 390 50 413 20 436 30 460 13" stroke="#69D9CE" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 81L22 78 42 73 65 77 86 51 108 63 132 57 153 70 178 39 200 55 222 47 245 65 270 44 294 49 317 28 342 45 364 36 390 50 413 20 436 30 460 13V106H0Z" fill="#45BEB6" opacity=".10"/></svg></div>
-    <div class="security-log"><span>EVENT REVIEW</span><span>RULE MATCHING</span><span>TRACEABILITY</span></div>
-  </div>
-</div>
+              <div class="project-art project-art-security" aria-hidden="true">
+                <svg viewBox="0 0 600 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="carthago-halo"><stop stop-color="#39BEC2" stop-opacity=".20"/><stop offset="1" stop-color="#39BEC2" stop-opacity="0"/></radialGradient>
+                    <linearGradient id="carthago-shield" x1="250" y1="100" x2="360" y2="260"><stop stop-color="#64D8D9"/><stop offset="1" stop-color="#2583BE"/></linearGradient>
+                  </defs>
+                  <circle cx="300" cy="180" r="171" fill="url(#carthago-halo)"/>
+                  <g stroke="#4C9EC0" stroke-opacity=".28" stroke-width="1.4"><circle cx="300" cy="180" r="145" stroke-dasharray="3 11"/><circle cx="300" cy="180" r="113"/><circle cx="300" cy="180" r="82" stroke-dasharray="5 10"/></g>
+                  <g stroke="#75D7DD" stroke-width="2" stroke-opacity=".65" stroke-linecap="round"><path d="M300 95V68"/><path d="M385 180h52"/><path d="M215 180h-52"/><path d="M300 265v27"/></g>
+                  <g fill="#0F3853" stroke="#74D1DC" stroke-width="2"><circle cx="300" cy="53" r="14"/><circle cx="452" cy="180" r="14"/><circle cx="148" cy="180" r="14"/><circle cx="300" cy="307" r="14"/></g>
+                  <g fill="#6EE6DA"><circle cx="300" cy="53" r="4"/><circle cx="452" cy="180" r="4"/><circle cx="148" cy="180" r="4"/><circle cx="300" cy="307" r="4"/></g>
+                  <path d="M300 104 357 128v47c0 40-21 69-57 88-36-19-57-48-57-88v-47l57-24Z" fill="#103951" stroke="url(#carthago-shield)" stroke-width="4"/>
+                  <path d="m272 181 18 18 38-40" stroke="#74F0E0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <g font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#A6DCE8"><text x="26" y="35">CARTHAGO</text><text x="26" y="51" font-size="8" letter-spacing="2" fill="#5BABC6">NETWORK / SECURITY / .NET</text></g>
+                  <path d="M25 320h95" stroke="#2C739A" stroke-width="2"/><circle cx="129" cy="320" r="3" fill="#50DED7"/>
+                </svg>
+                <span class="art-corner">C# / .NET PROJECT</span>
+              </div>
               <div class="project-body">
-                <div class="project-meta">NETWORK SECURITY &amp; MONITORING <span>02</span></div>
+                <div class="project-meta">NETWORK SECURITY &amp; MONITORING <span>01</span></div>
+                <span class="project-context">Independent · active development</span>
                 <h3>Carthago <span class="project-title-dash">/</span><br />Network Security Monitor</h3>
-                <p>A C#/.NET project focused on network visibility, security monitoring and diagnostics, designed to help identify potential issues and support reliable network operations.</p>
+                <p>My independently developed C#/.NET desktop monitor, built to bring network capture, security signals and diagnostic context into one place. I am actively refining its reliability and usability.</p>
                 <div class="tag-row"><span>C#</span><span>.NET</span><span>Network Security</span><span>Monitoring</span></div>
                 <div class="project-facts">
-                  <div><span>CONTRIBUTION</span><p>Engineering a Windows monitoring application with a focus on network telemetry, diagnostics and actionable security signals.</p></div>
-                  <div><span>CONTEXT</span><p>Independent C# and .NET project under development. Source code is shared selectively after review.</p></div>
+                  <div><span>CONTRIBUTION</span><p>Designing capture, event correlation, security-rule organization, diagnostics and a WPF interface around actionable evidence.</p></div>
+                  <div><span>CONTEXT</span><p>Independent, public-source project under active development. Registered rules are not a claim of validated detection accuracy.</p></div>
                 </div>
+                <a class="project-source" href="https://github.com/afiay/Carthago-Network-Security-Monitor" target="_blank" rel="noopener noreferrer">Explore Carthago's code &amp; README <span aria-hidden="true">↗</span></a>
+                <details class="case-study" data-case-study="carthago">
+                  <summary>Engineering notes <span aria-hidden="true">+</span></summary>
+                  <dl>
+                    <div><dt>Problem</dt><dd>Raw network events are hard to turn into security and troubleshooting observations someone can explain. Centralising logs across systems usually takes several tools, with upfront integration work and ongoing maintenance. 55% of surveyed security leaders say they have too many point solutions, 45% use six or more security tools, and 63% name operational cost as their biggest pain point.</dd></div>
+                    <div><dt>Constraints</dt><dd>Windows desktop capture, varied protocols, noisy inputs, and no budget for a full logging stack. I also had to keep recorded evidence separate from interpretation.</dd></div>
+                    <div><dt>Decision</dt><dd>Separate acquisition, protocol and flow inspection, security signals, and presentation. Keep one traceable log trail instead of adding tools. Build documentation from that trail: every capture, alert, and change leaves a timestamped record, and my notes are written from it. Interpretation is added by hand and labelled as such.</dd></div>
+                    <div><dt>Verification</dt><dd>Document expected behavior with tests and repeatable samples. Inspect false positives and UI empty states before calling a rule dependable. Strip sensitive data before anything is documented, and flag where logging was incomplete.</dd></div>
+                    <div><dt>Learning</dt><dd>Visibility only matters when an operator can tell what happened, why it was flagged, and what remains uncertain. Logs show events, not intent, so the “why” still needs a human, clearly marked.</dd></div>
+                  </dl>
+                  <p class="case-study-source">Survey context: These statistics come from a survey of 506 security leaders and practitioners at organizations with more than 500 employees, reported in <a href="https://www.sumologic.com/blog/2026-security-operations-insights-report" target="_blank" rel="noopener noreferrer">Sumo Logic’s 2026 Security Operations Insights Report</a>. Sumo Logic is a SIEM vendor.</p>
+                </details>
               </div>
             </article>
             <article class="project-card project-feature project-feature-leadser" data-category="software automation">
-              <div class="project-art project-art-leadser art-surface" aria-hidden="true">
-  <div class="art-toolbar"><span>LEADSER</span><span>RESEARCH INTELLIGENCE</span></div>
-  <div class="leadser-screen">
-    <div class="leadser-rail"><strong>L</strong><span>01</span><span>02</span><span>03</span></div>
-    <div class="leadser-main"><div class="leadser-title"><div><small>ASTERRA / WORKSPACE</small><strong>Opportunity research</strong></div><span>RESEARCH</span></div>
-      <div class="leadser-metrics"><div><small>DISCOVERY</small><strong>Market signals</strong><i></i></div><div><small>ASSESSMENT</small><strong>Company fit</strong><i></i></div></div>
-      <div class="leadser-table"><div><span>RESEARCH PIPELINE</span><span>STATUS</span></div><div><b>Discover organizations</b><em>Research</em></div><div><b>Review evidence</b><em>Validate</em></div><div><b>Govern actions</b><em>Approve</em></div></div>
-    </div>
-    <div class="leadser-side"><small>KNOX</small><strong>Trust and<br>governance</strong><div class="knox-lines"><span></span><span></span><span></span></div><p>Permissions<br>Approvals<br>Evidence</p></div>
-  </div>
-  <div class="art-bottom">DISCOVER <span>RESEARCH</span> GOVERN</div>
-</div>
+              <div class="project-art project-art-leadser" aria-hidden="true">
+                <svg viewBox="0 0 600 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="leadser-backlight" cx="0" cy="0" r="1" gradientTransform="translate(302 175) rotate(90) scale(190 265)" gradientUnits="userSpaceOnUse"><stop stop-color="#275F88"/><stop offset="1" stop-color="#0A2039"/></radialGradient>
+                    <linearGradient id="leadser-core" x1="220" y1="95" x2="366" y2="252" gradientUnits="userSpaceOnUse"><stop stop-color="#60DBDC"/><stop offset="1" stop-color="#5C94F7"/></linearGradient>
+                    <linearGradient id="leadser-link" x1="134" y1="180" x2="508" y2="180" gradientUnits="userSpaceOnUse"><stop stop-color="#4EC7D6"/><stop offset="1" stop-color="#929CF8"/></linearGradient>
+                  </defs>
+                  <rect width="600" height="360" rx="12" fill="url(#leadser-backlight)"/>
+                  <g stroke="#5E8CB0" stroke-opacity=".11" stroke-width="1"><path d="M0 60H600M0 120H600M0 180H600M0 240H600M0 300H600M60 0V360M120 0V360M180 0V360M240 0V360M300 0V360M360 0V360M420 0V360M480 0V360M540 0V360"/></g>
+                  <text x="30" y="39" fill="#A4D3EB" font-size="10" font-weight="700" letter-spacing="2.4" font-family="Arial, sans-serif">LEADSER / INTELLIGENCE PLATFORM</text>
+                  <g stroke="url(#leadser-link)" stroke-width="2.2" stroke-linecap="round" opacity=".78">
+                    <path d="M150 99C188 99 207 134 235 147"/>
+                    <path d="M150 180H218"/>
+                    <path d="M150 261C188 261 207 222 235 208"/>
+                    <path d="M361 177H444"/>
+                  </g>
+                  <g fill="#0F3552" stroke="#4E8AAE" stroke-width="1.5">
+                    <rect x="39" y="76" width="111" height="45" rx="9"/>
+                    <rect x="39" y="157" width="111" height="45" rx="9"/>
+                    <rect x="39" y="238" width="111" height="45" rx="9"/>
+                  </g>
+                  <g fill="#54D9DC"><circle cx="57" cy="99" r="5"/><circle cx="57" cy="180" r="5"/><circle cx="57" cy="261" r="5"/></g>
+                  <g fill="#D4EAF5" font-size="11" font-family="Arial, sans-serif"><text x="72" y="103">Markets</text><text x="72" y="184">Companies</text><text x="72" y="265">Signals</text></g>
+                  <circle cx="290" cy="177" r="104" stroke="#8CC3F0" stroke-opacity=".2" stroke-width="1.5"/>
+                  <circle class="leadser-orbit" cx="290" cy="177" r="92" stroke="#82D9E1" stroke-width="1.4" stroke-dasharray="4 12" stroke-opacity=".62"/>
+                  <circle cx="290" cy="177" r="71" fill="#143F61" stroke="url(#leadser-core)" stroke-width="2.8"/>
+                  <circle cx="290" cy="177" r="61" stroke="#8DBCDC" stroke-opacity=".23"/>
+                  <path d="M259 154 275 141 289 154 303 141 321 154M259 201 275 188 289 201 303 188 321 201" stroke="#6ED6E1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+                  <text x="290" y="181" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700" letter-spacing="1.4" font-family="Arial, sans-serif">ASTERRA</text>
+                  <text x="290" y="234" text-anchor="middle" fill="#93D1E4" font-size="9" letter-spacing="2" font-family="Arial, sans-serif">RESEARCH</text>
+                  <g transform="translate(443 125)">
+                    <rect width="116" height="105" rx="13" fill="#173654" stroke="#7596D3" stroke-width="1.5"/>
+                    <path d="m58 16 23 10v22c0 18-10 30-23 36-13-6-23-18-23-36V26l23-10Z" stroke="#9AB7FB" stroke-width="2.5" fill="#1B436A"/>
+                    <path d="m48 49 8 8 14-17" stroke="#7BE1D4" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="58" y="98" fill="#D7E6FF" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.8" font-family="Arial, sans-serif">KNOX</text>
+                  </g>
+                  <g fill="#86AFC9" font-size="9" letter-spacing="1.3" font-family="Arial, sans-serif"><text x="41" y="317">DISCOVERY</text><text x="258" y="326">ANALYSIS</text><text x="461" y="250">GOVERNANCE</text></g>
+                  <circle cx="218" cy="180" r="4" fill="#7BE5DF"/>
+                  <circle cx="412" cy="177" r="4" fill="#9DACFF"/>
+                </svg>
+                <span class="art-corner">INDEPENDENT PRODUCT</span>
+              </div>
               <div class="project-body">
-                <div class="project-meta">BUSINESS INTELLIGENCE &amp; SOFTWARE <span>03</span></div>
+                <div class="project-meta">BUSINESS INTELLIGENCE &amp; SOFTWARE <span>02</span></div>
+                <span class="project-context">Independent · in development</span>
                 <h3>Leadser</h3>
                 <p>An independent business intelligence platform I am developing to connect market research, company discovery and opportunity assessment in one workflow. ASTERRA is designed to investigate organizations and assess their fit, needs and timing. KNOX adds governance through permissions, approvals and evidence-backed decisions.</p>
                 <div class="tag-row"><span>Python</span><span>Django</span><span>Next.js</span><span>PostgreSQL</span></div>
@@ -203,9 +261,13 @@
               </div>
             </article>
             <article class="project-card" data-category="software">
-              <div class="project-art project-art-iot art-surface" aria-hidden="true"><div class="art-toolbar"><span>IOT OPEN</span><span>CONNECTED OPERATIONS</span></div><div class="iot-screen"><div class="iot-header"><small>PLATFORM OVERVIEW</small><strong>Devices and control</strong></div><div class="iot-panels"><div><small>DATA</small><strong>Device streams</strong><span>Unified visibility</span></div><div><small>EVENTS</small><strong>Alarm review</strong><span>Context and history</span></div></div><div class="iot-graph"><span>TELEMETRY VIEW</span><svg viewBox="0 0 430 75" preserveAspectRatio="none"><path d="M0 58H430M0 32H430" stroke="#3D617A" stroke-dasharray="3 7"/><path d="M0 52L25 46 45 51 70 24 92 36 120 30 142 48 164 40 192 15 219 35 247 23 271 40 295 27 319 31 340 11 364 23 387 17 410 30 430 18" fill="none" stroke="#69E4DE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+              <div class="project-art project-art-iot" aria-hidden="true">
+                <svg viewBox="0 0 500 240"><g stroke="#6CCBF1" stroke-width="2.5" fill="none"><path d="M93 123h102M305 123h102M250 52v34M250 160v35M146 70l60 44M356 70l-61 44M146 178l60-42M356 178l-61-42"/></g><rect x="196" y="84" width="108" height="78" rx="13" fill="#1D6087" stroke="#9BE5FF" stroke-width="3"/><rect x="213" y="102" width="74" height="41" rx="5" fill="#071D37"/><path d="m225 125 12-12 13 16 14-20 12 10" stroke="#46DBD7" stroke-width="4" fill="none"/><g fill="#2C7EA9" stroke="#89DEFD" stroke-width="2"><circle cx="94" cy="123" r="23"/><circle cx="407" cy="123" r="23"/><circle cx="250" cy="42" r="22"/><circle cx="250" cy="202" r="22"/><circle cx="130" cy="62" r="17"/><circle cx="371" cy="62" r="17"/><circle cx="130" cy="185" r="17"/><circle cx="371" cy="185" r="17"/></g></svg>
+                <span class="art-corner">LIA PROJECT</span>
+              </div>
               <div class="project-body">
-                <div class="project-meta">PLATFORM &amp; INTEGRATION <span>04</span></div>
+                <div class="project-meta">PLATFORM &amp; INTEGRATION <span>03</span></div>
+                <span class="project-context">Internship · existing platform</span>
                 <h3>IoT Open Platform</h3>
                 <p>Frontend and API integration work connecting device data, analytics, alarms and control flows to an existing platform.</p>
                 <div class="tag-row"><span>React</span><span>REST APIs</span><span>OIDC</span></div>
@@ -213,15 +275,65 @@
                   <div><span>CONTRIBUTION</span><p>Designed unified user workflows and modular GPS, alarms and visualization components without changing the existing database.</p></div>
                   <div><span>CONTEXT</span><p>LIA internship at IoT Open, November 2025 to April 2026. Work integrated with an existing platform.</p></div>
                 </div>
+                <details class="case-study" data-case-study="iot-open">
+                  <summary>Engineering notes <span aria-hidden="true">+</span></summary>
+                  <dl>
+                    <div><dt>Problem</dt><dd>Operators juggled six separate tools: GPS, alerts, statistics, on/off control, Grafana, and Home Assistant. Each tool needs maintenance, and each switch costs attention. A 2022 study of 137 users found about 1,200 app toggles a day and roughly 9% of work time spent reorienting. In a separate 2018 study, workers using 30 or more applications in a shift had a 28% higher error rate than those using fewer apps.</dd></div>
+                    <div><dt>Constraints</dt><dd>The existing platform and database had to stay intact, integrating only through existing REST services.</dd></div>
+                    <div><dt>Decision</dt><dd>A plugin-based platform where each user picks what they see: alerts, GPS, or any chart. Switches and automation run from the same interface, and existing integrations connect as plugins. Result: <strong>6 windows reduced to 1, an 83% reduction in separate interfaces.</strong></dd></div>
+                    <div><dt>Verification</dt><dd>Compared windows needed per task before and after. Checked API mappings, permissions per role, and loading, empty, and error states.</dd></div>
+                    <div><dt>Learning</dt><dd>Centralising means giving people one place to choose what matters, while respecting what already works.</dd></div>
+                  </dl>
+                  <p class="case-study-source">Research context: <a href="https://store.hbr.org/product/how-much-time-and-energy-do-we-waste-toggling-between-applications/H0777V" target="_blank" rel="noopener noreferrer">Murty, Dadlani &amp; Das, <em>Harvard Business Review</em> (2022)</a> studied 137 users across three companies. The 28% error-rate comparison comes from <a href="https://workplaceinsight.net/constant-switching-between-tasks-kills-productivity/" target="_blank" rel="noopener noreferrer">Workplace Insight's report (2018)</a> on Pegasystems research. These are external findings, not measured productivity or error-rate improvements at IoT Open. The 83% figure describes the reduction in separate windows (6 to 1).</p>
+                </details>
+              </div>
+            </article>
+            <article class="project-card project-card-ansible" data-category="automation">
+              <div class="project-art project-art-code" aria-hidden="true">
+                <div class="code-top"><i></i><i></i><i></i><span>site.yml / read-only assessment</span></div>
+                <pre><span class="syntax-cyan">$</span> ansible-playbook site.yml
+<span class="syntax-green">✓</span> Discover IOS &amp; interfaces
+<span class="syntax-green">✓</span> Back up configuration
+<span class="syntax-green">✓</span> Assess risk &amp; advisory
+<span class="syntax-cyan">$</span> ansible-playbook manifest.yml
+<span class="syntax-green">✓</span> Hash evidence with SHA-256</pre>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">NETWORK AUTOMATION &amp; ASSESSMENT <span>04</span></div>
+                <span class="project-context">Independent · documented Cisco GNS3 lab</span>
+                <h3>Ansible Patch Management</h3>
+                <p>I built a read-only Cisco IOS assessment workflow in GNS3 using Ansible. It discovers device state, backs up the running configuration, reviews security settings and a Cisco field notice, and produces evidence for a human to assess before any change.</p>
+                <div class="tag-row"><span>Ansible</span><span>Cisco IOS</span><span>GNS3</span><span>Jinja2</span><span>SHA-256</span></div>
+                <div class="project-facts">
+                  <div><span>CONTRIBUTION</span><p>Built separate discovery, backup, security assessment, risk review and advisory playbooks, plus reporting templates and an evidence manifest.</p></div>
+                  <div><span>CONTEXT</span><p>Read-only educational lab. No IOS upgrades, configuration changes, automatic approvals or production deployment. The manifest is run separately from site.yml.</p></div>
+                </div>
+                <a class="project-source" href="https://github.com/afiay/ansible-patch-management" target="_blank" rel="noopener noreferrer">Explore the Ansible playbooks &amp; README <span aria-hidden="true">↗</span></a>
+                <details class="case-study" data-case-study="ansible">
+                  <summary>Engineering notes <span aria-hidden="true">+</span></summary>
+                  <dl>
+                    <div><dt>Problem</dt><dd>Assessing a device and preparing a safe patch decision requires more than checking its IOS version. Configuration, exposure, applicability and reliable evidence must be reviewed together.</dd></div>
+                    <div><dt>Constraints</dt><dd>One Cisco 7200 IOS router in an isolated GNS3 environment, controlled over SSH from Ubuntu. The assessment must not alter the device.</dd></div>
+                    <div><dt>Decision</dt><dd>Separate discovery, backup, security review, risk inputs and Cisco FN70489 prerequisite checks into focused Ansible playbooks. Generate Markdown evidence reports and SHA-256 manifests for later comparison.</dd></div>
+                    <div><dt>Verification</dt><dd>Use IOS show-command evidence, review the resulting configuration snapshot and report output, validate assessment inputs and distinguish observed status from advisory applicability.</dd></div>
+                    <div><dt>Learning</dt><dd>Automation should make decisions traceable, not silently make them. Patch execution, approval, restore and validated failover remain separate future steps.</dd></div>
+                  </dl>
+                  <p class="case-study-source">Source: <a href="https://github.com/afiay/ansible-patch-management/blob/main/README.md" target="_blank" rel="noopener noreferrer">Ansible Patch Management documentation</a>.</p>
+                </details>
               </div>
             </article>
             <article class="project-card" data-category="automation network">
-              <div class="project-art project-art-code art-surface" aria-hidden="true"><div class="art-toolbar"><span>CHANGE CONTROL</span><span>AUTOMATION / REVIEW</span></div><div class="automation-screen"><div class="auto-stage"><span>01</span><strong>Assess</strong><small>Risk and ownership</small></div><div class="auto-stage"><span>02</span><strong>Simulate</strong><small>Review and dry run</small></div><div class="auto-stage"><span>03</span><strong>Verify</strong><small>Evidence and rollback</small></div></div><div class="terminal"><span>change-review.sh</span><pre><i>$</i> terraform plan
-<span>Review infrastructure changes</span>
-<i>$</i> ansible-playbook --check
-<span>Validate before deployment</span></pre></div></div>
+              <div class="project-art project-art-code" aria-hidden="true">
+                <div class="code-top"><i></i><i></i><i></i><span>change-review.sh</span></div>
+                <pre><span class="syntax-cyan">$</span> terraform plan
+<span class="syntax-green">✓</span> review scope &amp; risk
+<span class="syntax-cyan">$</span> ansible-playbook --check
+<span class="syntax-green">✓</span> verify before change
+<span class="syntax-cyan">$</span> git diff --stat</pre>
+              </div>
               <div class="project-body">
                 <div class="project-meta">AUTOMATION &amp; GOVERNANCE <span>05</span></div>
+                <span class="project-context">Engineering method · proposed workflow</span>
                 <h3>Governed Automation</h3>
                 <p>A risk-aware change and patching workflow connecting discovery, review, simulation, delivery and learning.</p>
                 <div class="tag-row"><span>Terraform</span><span>Ansible</span><span>Git</span></div>
@@ -231,23 +343,14 @@
                 </div>
               </div>
             </article>
-            <article class="project-card" data-category="automation software">
-              <div class="project-art project-art-crawler art-surface" aria-hidden="true"><div class="art-toolbar"><span>WEB RESEARCH</span><span>AUTOMATED ANALYSIS</span></div><div class="crawler-screen"><div class="crawler-title"><small>SCHEDULED RESEARCH</small><strong>Website quality review</strong></div><div class="crawler-bars"><span style="--bar:70%"></span><span style="--bar:44%"></span><span style="--bar:87%"></span><span style="--bar:56%"></span><span style="--bar:76%"></span><span style="--bar:48%"></span><span style="--bar:91%"></span><span style="--bar:62%"></span><span style="--bar:80%"></span></div><div class="crawler-rows"><div><b>CHECK</b><span>Website analysis</span></div><div><b>COMPARE</b><span>Outlier detection</span></div><div><b>REPORT</b><span>Scheduled findings</span></div></div></div></div>
-              <div class="project-body">
-                <div class="project-meta">MONITORING &amp; AUTOMATION <span>06</span></div>
-                <h3>Website Research Crawler</h3>
-                <p>Python-based checks and scheduled findings reports to surface website issues and notable outliers.</p>
-                <div class="tag-row"><span>Python</span><span>Monitoring</span><span>Reporting</span></div>
-                <div class="project-facts">
-                  <div><span>CONTRIBUTION</span><p>Built custom website checks and scheduled reports to flag issues, unusual results and examples of well-built sites.</p></div>
-                  <div><span>CONTEXT</span><p>Independent research and monitoring work for Novatech Solutions, focused on reusable findings.</p></div>
-                </div>
-              </div>
-            </article>
             <article class="project-card" data-category="network software">
-              <div class="project-art project-art-vps art-surface" aria-hidden="true"><div class="art-toolbar"><span>LINUX PLATFORM</span><span>INFRASTRUCTURE</span></div><div class="vps-screen"><div class="vps-stack"><div><span></span><span></span><span></span><i>01</i></div><div><span></span><span></span><span></span><i>02</i></div><div><span></span><span></span><span></span><i>03</i></div></div><div class="vps-details"><small>SERVICE STACK</small><strong>Reliable hosting</strong><div><span>LINUX</span><span>NGINX</span><span>HTTPS</span></div><p>Configuration, deployment, monitoring and operational documentation.</p></div></div></div>
+              <div class="project-art project-art-vps" aria-hidden="true">
+                <svg viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#6EBBD7" stroke-opacity=".36"><path d="M105 39h290M105 198h290"/><path d="M250 21v196" stroke-dasharray="4 8"/></g><rect x="155" y="37" width="190" height="168" rx="13" fill="#123D5B" stroke="#4D99C3" stroke-width="2"/><g fill="#1C5777" stroke="#74CBE8" stroke-width="1.8"><rect x="176" y="58" width="148" height="36" rx="6"/><rect x="176" y="103" width="148" height="36" rx="6"/><rect x="176" y="148" width="148" height="36" rx="6"/></g><g fill="#7DE5D6"><circle cx="197" cy="76" r="5"/><circle cx="197" cy="121" r="5"/><circle cx="197" cy="166" r="5"/></g><g stroke="#7CBAD9" stroke-width="3" stroke-linecap="round"><path d="M216 76h82M216 121h82M216 166h82"/></g></svg>
+                <span class="art-corner">OPERATIONS LAB</span>
+              </div>
               <div class="project-body">
-                <div class="project-meta">LINUX &amp; OPERATIONS <span>07</span></div>
+                <div class="project-meta">LINUX &amp; OPERATIONS <span>06</span></div>
+                <span class="project-context">Personal lab · infrastructure practice</span>
                 <h3>Linux VPS Platform</h3>
                 <p>Application hosting practice on Debian/Ubuntu, using Nginx, DNS, Git and CI/CD workflows.</p>
                 <div class="tag-row"><span>Linux</span><span>Nginx</span><span>CI/CD</span></div>
@@ -258,7 +361,61 @@
               </div>
             </article>
           </div>
-          <p class="project-footnote">Project descriptions identify labs, internships and methodology work explicitly. Additional code and documentation can be shared where appropriate.</p>
+          <div class="labs-section" id="labs" hidden aria-labelledby="labs-title">
+          <div class="labs-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-line"></span>SELECTED WORK / NETWORK ENGINEERING</div>
+              <h2 id="labs-title">Explore the network <em>labs.</em></h2>
+            </div>
+            <div class="labs-note"><span class="labs-note-dot" aria-hidden="true"></span>Educational simulations <small>Illustrative walkthroughs, not live network telemetry.</small></div>
+          </div>
+
+          <p class="lab-tabs-hint"><span aria-hidden="true">↔</span> Swipe to choose a lab</p>
+
+          <div class="lab-tabs" role="tablist" aria-label="Network lab projects">
+            <button class="lab-tab is-active" id="lab-tab-01" type="button" role="tab" aria-selected="true" aria-controls="lab-explorer" data-lab="lab-01"><span>01</span><strong>Switching &amp; VLANs</strong><small>VTP · STP · EtherChannel</small></button>
+            <button class="lab-tab" id="lab-tab-02" type="button" role="tab" aria-selected="false" aria-controls="lab-explorer" data-lab="lab-02" tabindex="-1"><span>02</span><strong>Routing &amp; IPv6</strong><small>EIGRP · OSPF · VLANs</small></button>
+            <button class="lab-tab" id="lab-tab-03" type="button" role="tab" aria-selected="false" aria-controls="lab-explorer" data-lab="lab-03" tabindex="-1"><span>03</span><strong>Multi-site Resilience</strong><small>eBGP · GRE · HSRP/VRRP</small></button>
+          </div>
+
+          <div class="lab-workspace" id="lab-explorer" role="tabpanel" aria-labelledby="lab-tab-01">
+            <div class="lab-stage">
+              <header class="lab-stage-header">
+                <div><span class="lab-kicker" id="lab-kicker">LAB 01 / SWITCHING</span><h3 id="lab-stage-title">Switching, Segmentation &amp; STP</h3><p id="lab-stage-subtitle">Three switches, two EtherChannels, three VLANs and one verified host-to-host test.</p></div>
+                <div class="lab-stage-actions">
+                  <span class="lab-step-pill" id="lab-step-pill">Step 01 / 04</span>
+                  <button class="lab-share" id="lab-share" type="button">Copy link to this lab <span aria-hidden="true">↗</span></button>
+                  <span class="lab-share-status" id="lab-share-status" role="status" aria-live="polite"></span>
+                </div>
+              </header>
+              <div class="lab-diagram" tabindex="0" role="region" aria-label="Scrollable interactive topology. On smaller screens, swipe sideways to see all devices and physical cables.">
+                <div class="lab-diagram-top"><div id="lab-protocol-tags" class="lab-protocol-tags" aria-label="Lab protocols"><span>VLAN / VTP</span><span>Rapid PVST+</span><span>PAgP</span><span>LACP</span></div><span class="lab-physical-legend"><i aria-hidden="true"></i>Physical cable <b aria-hidden="true"></b>Logical overlay</span></div>
+                <p class="lab-touch-hint"><span aria-hidden="true">↔</span> Swipe sideways to explore the full topology. Tap a device or cable for its details.</p>
+                <svg id="lab-topology" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Interactive physical network topology: select devices or cables to inspect them"></svg>
+                <p class="lab-diagram-caption" id="lab-diagram-caption">Solid lines are physical cables; highlighted traffic is illustrative.</p>
+              </div>
+              <details class="lab-inventory"><summary>Physical link inventory <span id="lab-link-count">7 cables</span><span aria-hidden="true">⌄</span></summary><div class="lab-inventory-items" id="lab-physical-links" role="list" aria-label="Physical cables and source-confirmed interface ports where available"></div></details>
+              <div class="lab-playbar" role="group" aria-label="Walkthrough playback controls">
+                <button class="lab-control lab-control-primary" id="lab-play" type="button" aria-label="Pause lab walkthrough" aria-pressed="true"><span id="lab-play-icon" aria-hidden="true">Ⅱ</span></button>
+                <button class="lab-control" id="lab-prev" type="button" aria-label="Previous step">←</button>
+                <button class="lab-control" id="lab-next" type="button" aria-label="Next step">→</button>
+                <div class="lab-progress-wrap"><div class="lab-progress" id="lab-progress" aria-hidden="true"></div><span id="lab-progress-label">1 / 4</span></div>
+                <div class="lab-playback-copy"><strong id="lab-active-step">Segment the LAN</strong><small id="lab-playback-note">Guided educational playback; not packet capture</small></div>
+              </div>
+            </div>
+
+            <aside class="lab-sidebar" aria-label="Lab explanation and supporting evidence">
+              <div class="lab-sidebar-heading"><h3>Protocol walkthrough</h3><span id="lab-step-count">4 steps</span></div>
+              <ol class="lab-step-list" id="lab-steps" aria-label="Select a protocol step"><li class="lab-step-placeholder">Select a lab to inspect its protocol steps.</li></ol>
+              <div class="lab-proof-section">
+                <div class="lab-sidebar-heading"><h3>Configuration &amp; evidence</h3><span id="lab-platform">Packet Tracer</span></div>
+                <div id="lab-evidence" class="lab-evidence-list" aria-label="Observed or required lab evidence"><p>Results from the supplied lab screenshots appear here.</p></div>
+              </div>
+              <div class="lab-inspector" id="lab-inspector" aria-live="polite"><strong>Inspect the topology</strong><p>Select a switch, router or cable to read about its role and physical connection.</p></div>
+            </aside>
+          </div>
+          <div class="lab-method-strip" aria-label="How the labs are documented"><div><span>01</span><strong>Topology &amp; addressing</strong><small>Exact physical links and device roles</small></div><div><span>02</span><strong>Configuration decisions</strong><small>Protocol intent and limitations</small></div><div><span>03</span><strong>Verification evidence</strong><small>Observed output versus assignment goals</small></div></div>
+          </div>
         </div>
       </section>
 
@@ -266,22 +423,21 @@
         <div class="container">
           <div class="section-topline">
             <div>
-              <div class="eyebrow">MY PROCESS</div>
-              <h2 id="process-title">My working process</h2>
+              <div class="eyebrow"><span class="eyebrow-line"></span>MY PROCESS</div>
+              <h2 id="process-title">How I approach <em>the work.</em></h2>
             </div>
-            <p>This is the process I normally follow to keep work structured, secure and well documented. I can quickly learn and adapt to an organization's existing processes, responsibilities and ways of working.</p>
           </div>
           <div class="process-panel">
-            <div class="process-head"><span>GOVERNED END-TO-END PROCESS FLOW</span><span class="process-head-note">One documented lifecycle</span></div>
+            <div class="process-head"><span>GOVERNED END-TO-END PROCESS FLOW</span><span class="process-head-note">Six steps, one learning cycle</span></div>
             <ol class="flow-steps">
-              <li><span class="step-top"><span class="step-number">01</span></span><strong>Understand</strong><small>Impact, ownership, risk</small></li>
-              <li><span class="step-top"><span class="step-number">02</span></span><strong>Plan</strong><small>Scope, window, rollback</small></li>
-              <li><span class="step-top"><span class="step-number">03</span></span><strong>Approve</strong><small>Accountable decisions</small></li>
-              <li><span class="step-top"><span class="step-number">04</span></span><strong>Test</strong><small>Lab, checks, simulation</small></li>
-              <li><span class="step-top"><span class="step-number">05</span></span><strong>Implement</strong><small>Controlled delivery</small></li>
-              <li><span class="step-top"><span class="step-number">06</span></span><strong>Verify &amp; Learn</strong><small>Measure and improve</small></li>
+              <li><span class="step-top"><span class="step-number">01</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="14" cy="14" r="7"/><path d="m19.5 19.5 7 7"/></svg></span></span><strong>Understand</strong><small>Impact, ownership, risk</small></li>
+              <li><span class="step-top"><span class="step-number">02</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="7" y="5" width="18" height="23" rx="3"/><path d="m11 13 2 2 4-4M19 13h3M11 21h11"/></svg></span></span><strong>Plan</strong><small>Scope, window, rollback</small></li>
+              <li><span class="step-top"><span class="step-number">03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 11 5v8c0 7-4.5 11-11 14C9.5 27 5 23 5 16V8l11-5Z"/><path d="m11 16 3.5 3.5L22 12"/></svg></span></span><strong>Approve</strong><small>Accountable decisions</small></li>
+              <li><span class="step-top"><span class="step-number">04</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8M14 4v10L7 25a2 2 0 0 0 2 3h14a2 2 0 0 0 2-3l-7-11V4M11 21h10"/></svg></span></span><strong>Test</strong><small>Lab, checks, simulation</small></li>
+              <li><span class="step-top"><span class="step-number">05</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5a8 8 0 0 0-9 10L4 21a3 3 0 0 0 4 4l6-6a8 8 0 0 0 10-9l-5 5-4-4 4-6Z"/></svg></span></span><strong>Implement</strong><small>Controlled delivery</small></li>
+              <li><span class="step-top"><span class="step-number">06</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M26 13a10 10 0 0 0-17-6L6 10M6 5v5h5M6 19a10 10 0 0 0 17 6l3-3M26 27v-5h-5"/></svg></span></span><strong>Verify &amp; Learn</strong><small>Measure and improve</small></li>
             </ol>
-            <div class="learning-line"><strong>Continuous documentation</strong><span>Each step contributes evidence, decisions and lessons to the next change.</span></div>
+            <div class="learning-line"><span aria-hidden="true">↶</span> Documentation grows throughout the process. Every result improves the next change.</div>
             <div class="risk-levels" aria-label="Risk-based depth of approval and testing">
               <div class="risk-low"><span></span><strong>Low risk</strong><small>Pre-approved, quick checks</small></div>
               <div class="risk-medium"><span></span><strong>Medium risk</strong><small>Peer and configuration review</small></div>
@@ -289,7 +445,7 @@
             </div>
           </div>
           <div class="framework-heading">
-            <div><div class="eyebrow">WORKING WITH EXISTING PROCESSES</div><h3>Working with your team's process</h3></div>
+            <div><div class="eyebrow"><span class="eyebrow-line"></span>WORKING WITH EXISTING PROCESSES</div><h3>Working with your team's process</h3></div>
             <p>My process is a starting point, not a fixed requirement. I can work with ITIL 4, pm3, Agile or another method already used by the team.</p>
           </div>
           <div class="framework-grid">
@@ -315,32 +471,16 @@
         </div>
       </section>
 
-      <section class="section about-section" id="about" aria-labelledby="about-title">
-        <div class="container about-grid">
-          <div class="about-intro">
-            <div class="eyebrow">ABOUT ME</div>
-            <h2 id="about-title">Curiosity first.<br /><em>Systems thinking</em> always.</h2>
-            <p>My route into network engineering has not been a straight line. That experience is part of what I bring.</p>
-            <div class="about-links"><a href="#contact" class="text-link">Let's work together</a></div>
-          </div>
-          <div class="about-story">
-            <p>Before specializing in IT, I worked with people, projects and entrepreneurship. When resources were limited, I learned to design, build and solve problems myself. That curiosity gradually led me into software, infrastructure and network engineering.</p>
-            <p>Today I enjoy tracing issues across layers, from physical connections and routing to identity, APIs and applications. I value simple architecture, careful documentation, reversible changes and solutions that others can understand and maintain.</p>
-            <div class="about-principles"><div><strong>Think end to end</strong><span>From root cause to business impact</span></div><div><strong>Build to recover</strong><span>Resilience, rollback and verification</span></div><div><strong>Leave knowledge behind</strong><span>Documentation as a team asset</span></div></div>
-          </div>
-        </div>
-      </section>
-
       <section class="section education-section" aria-labelledby="education-title">
         <div class="container">
-          <div class="eyebrow">CONTINUOUS LEARNING</div>
+          <div class="eyebrow"><span class="eyebrow-line"></span>CONTINUOUS LEARNING</div>
           <div class="section-heading-line"><h2 id="education-title">Education &amp; technical development</h2><p>Formal training supported by hands-on labs and independent projects.</p></div>
           <div class="education-grid">
-            <div class="education-item"><span class="edu-year">2024 - 2026</span><h3>Network Engineering</h3><p>Edugrade</p><small>Infrastructure, network operations, routing, switching and IT service processes</small></div>
-            <div class="education-item"><span class="edu-year">2023 - 2025</span><h3>Network Technician</h3><p>Jensen</p><small>Networking foundations, configuration and troubleshooting</small></div>
-            <div class="education-item"><span class="edu-year">2025 / 2023</span><h3>Python &amp; Full-Stack Development</h3><p>Lexicon / Code Institute</p><small>Python, IT security, web development and system integration</small></div>
+            <div class="education-item"><span class="edu-year">2023 - 2025</span><h3>Network and IT Support Technician</h3><p>JENSEN Komvux | El- och energiprogrammet</p><small>Cisco networking, routing and switching, network administration, security, system configuration and troubleshooting</small></div>
+            <div class="education-item"><span class="edu-year">2024</span><h3>Python Development &amp; IT Security</h3><p>Lexicon</p><small>Python backend development, APIs, databases, system integration and IT security</small></div>
+            <div class="education-item"><span class="edu-year">2024 - 2026</span><h3>Network Engineer</h3><p>Edugrade</p><small>Infrastructure, network operations, routing, switching and IT service processes</small></div>
+            <div class="education-item"><span class="edu-year">2023</span><h3>Full-Stack Development</h3><p>Code Institute</p><small>Web application development, version control and full-stack fundamentals</small></div>
           </div>
-          <p class="education-note">Also studied Cisco networking curricula, including CCNA/CCNP topics; these are studies, not certification claims.</p>
 
           <div class="credentials-section" aria-labelledby="credentials-title">
             <div class="credentials-header">
@@ -350,22 +490,22 @@
             <div class="credentials-grid">
               <a class="credential-card" data-credential="edugrade" href="./assets/certificates/edugrade-network-engineer-public.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open public Edugrade Network Engineering diploma PDF">
                 <div class="credential-preview credential-preview-portrait"><img src="./assets/certificates/edugrade-network-engineer-public.png" loading="lazy" alt="Preview of Network Engineer diploma from Edugrade, personal number redacted" /></div>
-                <div class="credential-body"><span class="credential-provider">EDUGRADE <span>/</span> 2026</span><h4>Network Engineer</h4><p>Yrkeshögskoleexamen, 400 YH credits</p><span class="credential-open">View public diploma (PDF)</span></div>
+                <div class="credential-body"><span class="credential-provider">EDUGRADE <span>/</span> 2026</span><h4>Network Engineer</h4><p>Yrkeshögskoleexamen, 400 YH credits</p><span class="credential-open">View public diploma (PDF) <span aria-hidden="true">↗</span></span></div>
               </a>
               <a class="credential-card" data-credential="lexicon" href="./assets/certificates/lexicon-python-it-security-public.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Lexicon Python and IT Security diploma PDF">
                 <div class="credential-preview credential-preview-portrait"><img src="./assets/certificates/lexicon-python-it-security-public.png" loading="lazy" alt="Preview of Lexicon diploma in Python development and IT security" /></div>
-                <div class="credential-body"><span class="credential-provider">LEXICON <span>/</span> 2024</span><h4>Python / IT Security</h4><p>Development, security and cloud studies</p><span class="credential-open">View public diploma (PDF)</span></div>
+                <div class="credential-body"><span class="credential-provider">LEXICON <span>/</span> 2024</span><h4>Python / IT Security</h4><p>Development, security and cloud studies</p><span class="credential-open">View public diploma (PDF) <span aria-hidden="true">↗</span></span></div>
               </a>
               <a class="credential-card" data-credential="cisco-intro" href="./assets/certificates/cisco-introduction-to-networks.png" target="_blank" rel="noopener noreferrer" aria-label="Open Cisco Networking Academy Introduction to Networks certificate">
                 <div class="credential-preview"><img src="./assets/certificates/cisco-introduction-to-networks.png" loading="lazy" alt="Cisco Networking Academy course completion certificate for CCNA: Introduction to Networks" /></div>
-                <div class="credential-body"><span class="credential-provider">CISCO NETWORKING ACADEMY <span>/</span> 2024</span><h4>Introduction to Networks</h4><p>CCNA curriculum, course completed</p><span class="credential-open">View certificate</span></div>
+                <div class="credential-body"><span class="credential-provider">CISCO NETWORKING ACADEMY <span>/</span> 2024</span><h4>Introduction to Networks</h4><p>CCNA curriculum, course completed</p><span class="credential-open">View certificate <span aria-hidden="true">↗</span></span></div>
               </a>
               <a class="credential-card" data-credential="cisco-switching" href="./assets/certificates/cisco-switching-routing-wireless.png" target="_blank" rel="noopener noreferrer" aria-label="Open Cisco Networking Academy Switching Routing and Wireless Essentials certificate">
                 <div class="credential-preview"><img src="./assets/certificates/cisco-switching-routing-wireless.png" loading="lazy" alt="Cisco Networking Academy course completion certificate for CCNA: Switching, Routing, and Wireless Essentials" /></div>
-                <div class="credential-body"><span class="credential-provider">CISCO NETWORKING ACADEMY <span>/</span> 2025</span><h4>Switching, Routing &amp; Wireless</h4><p>CCNA curriculum, course completed</p><span class="credential-open">View certificate</span></div>
+                <div class="credential-body"><span class="credential-provider">CISCO NETWORKING ACADEMY <span>/</span> 2025</span><h4>Switching, Routing &amp; Wireless</h4><p>CCNA curriculum, course completed</p><span class="credential-open">View certificate <span aria-hidden="true">↗</span></span></div>
               </a>
             </div>
-            <p class="credentials-disclaimer">Cisco credentials shown here are Networking Academy course completion certificates, not the CCNA professional certification.</p>
+            <p class="credentials-disclaimer">I have studied Cisco networking curricula, including CCNA and CCNP topics. The Cisco credentials shown above are Networking Academy course completion certificates, not CCNA or CCNP professional certifications.</p>
           </div>
         </div>
       </section>
@@ -373,9 +513,9 @@
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="container contact-grid">
           <div>
-            <div class="eyebrow light">LET'S CONNECT</div>
+            <div class="eyebrow light"><span class="eyebrow-line"></span>LET'S CONNECT</div>
             <h2 id="contact-title">Good infrastructure begins with a <em>conversation.</em></h2>
-            <p>Open to opportunities in network engineering, infrastructure operations and security-minded automation.</p>
+            <p>Open to junior network engineering and infrastructure operations roles, technical conversations, and thoughtful feedback on my work.</p>
           </div>
           <div class="contact-actions" aria-label="Contact links">
             <a class="contact-option" href="https://github.com/afiay" target="_blank" rel="noopener noreferrer">
